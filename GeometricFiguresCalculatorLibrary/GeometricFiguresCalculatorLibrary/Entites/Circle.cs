@@ -3,15 +3,16 @@ using System;
 
 namespace GeometricFiguresCalculatorLibrary.Entites
 {
-    internal class Circle : IFigure
+    public class Circle : IFigure
     {
         private double _radius;
         private const double _pi = 3.1415;
         private double _square;
         private double _perimeter;
         
-        internal Circle(double radius)
+        public Circle(double radius)
         {
+            if (radius < 0) throw new ArgumentException(nameof(radius));
             _radius = radius;
             _perimeter = searchPerimeter();
             _square = searchSquare();
@@ -29,7 +30,7 @@ namespace GeometricFiguresCalculatorLibrary.Entites
             return perimeter;
         }
 
-        public double getSqare()
+        public double getSquare()
         {
             return _square;
         }

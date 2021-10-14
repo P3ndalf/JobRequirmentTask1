@@ -3,14 +3,15 @@ using System;
 
 namespace GeometricFiguresCalculatorLibrary.Entites
 {
-    class Triangle : IFigure
+    public class Triangle : IFigure
     {
         private double[] _sides;
         private double _square;
         private double _perimeter;
 
-        internal Triangle(double[] sides)
+        public Triangle(double[] sides)
         {
+            if (sides.Length != 3) throw new ArgumentOutOfRangeException(nameof(sides));
             _sides = sides;
             _perimeter = searchPerimeter();
             _square = searchSquare();
@@ -19,7 +20,6 @@ namespace GeometricFiguresCalculatorLibrary.Entites
         private bool checkIfTriangleRight()
         {
             // a^2 = b^2 + c^2
-            Console.WriteLine("sda");
             double gipotenuza = _sides[getBiggestSideIndex()];
             double leftPifagor = gipotenuza * gipotenuza;
             double rightPifagor = 0;
@@ -70,7 +70,7 @@ namespace GeometricFiguresCalculatorLibrary.Entites
             return perimeter;
         }
 
-        public double getSqare()
+        public double getSquare()
         {
             return _square;
         }

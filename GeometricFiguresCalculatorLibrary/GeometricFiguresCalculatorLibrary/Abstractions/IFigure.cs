@@ -8,7 +8,7 @@ namespace GeometricFiguresCalculatorLibrary.Abstractions
 
         public double searchPerimeter();
 
-        public double getSqare();
+        public double getSquare();
 
         public double getPerimeter();
 
